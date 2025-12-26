@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://apboyshostel.com/sitemap.xml
+
+# Allow favicon & manifest crawling
+Allow: /favicons/
+Allow: /site.webmanifest

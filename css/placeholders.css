@@ -1,0 +1,49 @@
+.placeholder {
+    background: linear-gradient(45deg, #f1f5f9, #e2e8f0);
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    100% {
+        left: 150%;
+    }
+}
+
+/* Placeholder sizes */
+.placeholder-square {
+    aspect-ratio: 1;
+}
+
+.placeholder-rect {
+    aspect-ratio: 16/9;
+}
+
+.placeholder-portrait {
+    aspect-ratio: 3/4;
+}
+
+/* Placeholder text */
+.placeholder-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    color: #94a3b8;
+}

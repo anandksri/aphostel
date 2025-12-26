@@ -1,0 +1,368 @@
+/* Custom styles on top of Tailwind CSS */
+
+/* Brand styles */
+/* .brand-ap {
+    font-family: "poppins", Times, serif;
+    font-weight: 700;
+    font-size: 1.75em;
+    letter-spacing: 0.05em;
+} */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Modern gradient backgrounds */
+.gradient-primary {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.gradient-dark {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+/* Enhanced Animations */
+.fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+/* Hero patterns and effects */
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.02);
+}
+
+/* Enhanced Modern Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.modern-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover effects */
+.gallery-item .aspect-w-4 {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Category badge animations */
+.gallery-item span {
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover span {
+    transform: translateY(0);
+}
+
+/* Title hover effect */
+.gallery-item h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-item h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.gallery-item:hover h3::after {
+    width: 100%;
+}
+
+/* Filter active states */
+.filter-btn.active {
+    background-color: var(--primary-color, #1e40af);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animated gradient overlay */
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Custom styling for form inputs */
+.form-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #1e40af;
+}
+
+/* Enhanced Mobile menu animations */
+.mobile-menu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Mobile menu layout for small screens */
+.nav-main .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    padding: 0.75rem 1rem;
+    display: block; /* Tailwind's 'hidden' will still control visibility */
+    box-shadow: 0 10px 30px rgba(2,6,23,0.15);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.nav-main .mobile-menu ul {
+    margin: 0;
+    padding: 0.25rem 0;
+}
+
+.nav-main .mobile-menu ul li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 0.5rem;
+    color: #374151; /* gray-700 */
+    font-weight: 600;
+}
+
+.nav-main .mobile-menu ul li a:hover,
+.nav-main .mobile-menu ul li a:focus {
+    background: rgba(30,64,175,0.06);
+    color: var(--primary-color, #1e40af);
+    outline: none;
+}
+
+/* Make sure mobile menu is easy to tap */
+.nav-main .mobile-menu .pb-4 { padding-bottom: 0.5rem; }
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Lightbox styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+/* Enhanced ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Enhanced WhatsApp float */
+.whatsapp-float {
+    box-shadow: 0 8px 24px rgba(16,185,129,0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(16,185,129,0.35);
+}
+
+/* Enhanced placeholders */
+.placeholder {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.placeholder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    animation: shine 2s infinite;
+}
+
+.placeholder-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+/* Glass effect utility */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar and Brand styles */
+.nav-main {
+    backdrop-filter: blur(6px);
+    background-color: rgba(255,255,255,0.85);
+}
+
+.brand-ap {
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #1e40af;
+    font-size: 1.75rem;
+    letter-spacing: 0.6px;
+    display: inline-block;
+    transform: translateY(-1px);
+}
+
+.brand-rest {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1e40af;
+}
+
+/* Slight hover animation on brand */
+.nav-main .brand-ap:hover {
+    transform: translateY(-3px) scale(1.02);
+    transition: transform 220ms ease;
+}
+
+/* Mobile menu improvements (keeps existing JS hooks) */
+.mobile-menu-button { background: transparent; border: none; }
+.mobile-menu a { display: block; }
