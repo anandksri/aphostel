@@ -155,6 +155,7 @@
                     </a>
                 </div>
             </div>
+            </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-light to-transparent"></div>
     </section>
@@ -351,7 +352,14 @@
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
                 Choose from our range of comfortable accommodations designed for your academic success
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="room-carousel-shell" data-room-carousel>
+                <button type="button" class="room-carousel-control prev" data-room-prev aria-label="Previous rooms">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="room-carousel-control next" data-room-next aria-label="Next rooms">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="room-carousel">
                 <!-- Single Room -->
                 <div class="modern-card group" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative h-56 overflow-hidden">
@@ -363,11 +371,10 @@
                             Most Popular
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-semibold group-hover:text-primary transition-colors">Single Room
-                            </h3>
-                            <p class="text-primary font-bold">Rs. 13,000/month</p>
+                    <div class="p-4 xl:p-5">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">1-Seater</h3>
+                            <p class="text-primary font-bold whitespace-nowrap">Rs. 14,000/month</p>
                         </div>
                         <p class="text-gray-600 mb-6">Perfect for focused individual study</p>
                         <div class="space-y-3 mb-6">
@@ -403,11 +410,10 @@
                             Best Value
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-semibold group-hover:text-primary transition-colors">Double Room
-                            </h3>
-                            <p class="text-primary font-bold">Rs. 12,000/month</p>
+                    <div class="p-4 xl:p-5">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">2-Seater</h3>
+                            <p class="text-primary font-bold whitespace-nowrap">Rs. 13,000/month</p>
                         </div>
                         <p class="text-gray-600 mb-6">Comfortable sharing accommodation</p>
                         <div class="space-y-3 mb-6">
@@ -443,11 +449,10 @@
                             Economic Choice
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-semibold group-hover:text-primary transition-colors">Triple Sharing
-                            </h3>
-                            <p class="text-primary font-bold">Rs. 11,000/month</p>
+                    <div class="p-4 xl:p-5">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">3-Seater</h3>
+                            <p class="text-primary font-bold whitespace-nowrap">Rs. 11,000/month</p>
                         </div>
                         <p class="text-gray-600 mb-6">Economic option with all amenities</p>
                         <div class="space-y-3 mb-6">
@@ -457,7 +462,7 @@
                             </div>
                             <div class="flex items-center text-gray-600">
                                 <i class="fas fa-bath w-6 text-primary"></i>
-                                <span class="ml-2">Shared bathroom</span>
+                                <span class="ml-2">No attached bathroom</span>
                             </div>
                             <div class="flex items-center text-gray-600">
                                 <i class="fas fa-wifi w-6 text-primary"></i>
@@ -468,6 +473,56 @@
                             class="btn-primary bg-primary text-white w-full py-3 px-4 rounded-lg inline-flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Triple Room with Attached Bathroom -->
+                <div class="modern-card group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple room with attached bathroom"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-primary z-20">Attached Bath</div>
+                    </div>
+                    <div class="p-4 xl:p-5">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">3-Seater</h3>
+                            <p class="text-primary font-bold whitespace-nowrap">Rs. 11,500/month</p>
+                        </div>
+                        <p class="text-gray-600 mb-6">Three-sharing room with attached bathroom</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-600"><i class="fas fa-bed w-6 text-primary"></i><span class="ml-2">Three single beds</span></div>
+                            <div class="flex items-center text-gray-600"><i class="fas fa-bath w-6 text-primary"></i><span class="ml-2">Attached bathroom</span></div>
+                            <div class="flex items-center text-gray-600"><i class="fas fa-wifi w-6 text-primary"></i><span class="ml-2">High-speed WiFi</span></div>
+                        </div>
+                        <a href="rooms.html" class="btn-primary bg-primary text-white w-full py-3 px-4 rounded-lg inline-flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+                            <span>View Details</span><i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quad Room -->
+                <div class="modern-card group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-56 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                        <img src="images/rooms/four-sharing.jpg" alt="Four seater room preview"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-secondary z-20">Budget Choice</div>
+                    </div>
+                    <div class="p-4 xl:p-5">
+                        <div class="mb-4">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">4-Seater</h3>
+                            <p class="text-primary font-bold whitespace-nowrap">Rs. 10,500/month</p>
+                        </div>
+                        <p class="text-gray-600 mb-6">Affordable sharing accommodation</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-600"><i class="fas fa-bed w-6 text-primary"></i><span class="ml-2">Four single beds</span></div>
+                            <div class="flex items-center text-gray-600"><i class="fas fa-bath w-6 text-primary"></i><span class="ml-2">Shared bathroom</span></div>
+                            <div class="flex items-center text-gray-600"><i class="fas fa-wifi w-6 text-primary"></i><span class="ml-2">High-speed WiFi</span></div>
+                        </div>
+                        <a href="rooms.html" class="btn-primary bg-primary text-white w-full py-3 px-4 rounded-lg inline-flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+                            <span>View Details</span><i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>

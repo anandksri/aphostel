@@ -13,6 +13,24 @@ function loadScript(url) {
 
     // Initialize once DOM is ready
 document.addEventListener('DOMContentLoaded', async function() {
+    // Room card carousels
+    document.querySelectorAll('[data-room-carousel]').forEach(shell => {
+        const carousel = shell.querySelector('.room-carousel');
+        const previous = shell.querySelector('[data-room-prev]');
+        const next = shell.querySelector('[data-room-next]');
+        if (!carousel) return;
+
+        const scrollCards = direction => {
+            const card = carousel.querySelector('.modern-card');
+            const gap = parseFloat(getComputedStyle(carousel).columnGap) || 20;
+            const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.8;
+            carousel.scrollBy({ left: distance * direction, behavior: 'smooth' });
+        };
+
+        previous?.addEventListener('click', () => scrollCards(-1));
+        next?.addEventListener('click', () => scrollCards(1));
+    });
+
     // Handle FAQ toggles with smooth animations
     const faqToggles = document.querySelectorAll('.faq-toggle');
     faqToggles.forEach(toggle => {

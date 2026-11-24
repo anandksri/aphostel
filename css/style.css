@@ -82,6 +82,88 @@ body {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Room card carousel */
+.room-carousel-shell {
+    position: relative;
+}
+
+.room-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 310px);
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 0.25rem 0.25rem 1.25rem;
+    scroll-padding-inline: 0.25rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.room-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.room-carousel > .modern-card {
+    min-width: 0;
+    height: 100%;
+    scroll-snap-align: start;
+}
+
+.room-carousel-control {
+    position: absolute;
+    top: 35%;
+    z-index: 30;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 9999px;
+    background: #fff;
+    color: #1e40af;
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.room-carousel-control:hover {
+    transform: translateY(-2px);
+    background: #1e40af;
+    color: #fff;
+}
+
+.room-carousel-control.prev {
+    left: -22px;
+}
+
+.room-carousel-control.next {
+    right: -22px;
+}
+
+@media (max-width: 767px) {
+    .room-carousel {
+        grid-auto-columns: 82%;
+        margin-inline: -0.25rem;
+        padding-inline: 0.25rem;
+    }
+
+    .room-carousel-control {
+        top: auto;
+        bottom: -58px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .room-carousel-control.prev {
+        left: calc(50% - 48px);
+    }
+
+    .room-carousel-control.next {
+        right: calc(50% - 48px);
+    }
+}
+
 .gallery-item {
     position: relative;
     cursor: pointer;

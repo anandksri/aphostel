@@ -138,7 +138,14 @@
     <!-- Room Cards Section -->
     <section class="py-16 bg-gradient-to-b from-white to-light">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="room-carousel-shell" data-room-carousel>
+                <button type="button" class="room-carousel-control prev" data-room-prev aria-label="Previous rooms">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="room-carousel-control next" data-room-next aria-label="Next rooms">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="room-carousel">
                 <!-- Single Room -->
                 <div class="modern-card group" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative h-72 overflow-hidden rounded-t-lg">
@@ -155,13 +162,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="p-8 relative">
-                        <div class="absolute -top-8 left-8 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
-                            <p class="text-2xl font-bold">Rs. 13,000<span class="text-sm opacity-75">/month</span></p>
+                    <div class="p-4 xl:p-5 relative">
+                        <div class="absolute -top-8 left-4 bg-primary text-white px-3 py-2 rounded-lg shadow-lg">
+                            <p class="text-xl font-bold whitespace-nowrap">Rs. 14,000<span class="text-sm opacity-75">/month</span></p>
                         </div>
-                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">Single Room
+                        <h3 class="text-xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">1-Seater
                         </h3>
-                        <ul class="grid grid-cols-2 gap-4 mb-8">
+                        <ul class="grid grid-cols-1 gap-3 mb-6">
                             <li class="flex items-center space-x-2 text-gray-600 group/item">
                                 <div
                                     class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
@@ -216,13 +223,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="p-8 relative">
-                        <div class="absolute -top-8 left-8 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
-                            <p class="text-2xl font-bold">Rs. 12,000<span class="text-sm opacity-75">/month</span></p>
+                    <div class="p-4 xl:p-5 relative">
+                        <div class="absolute -top-8 left-4 bg-primary text-white px-3 py-2 rounded-lg shadow-lg">
+                            <p class="text-xl font-bold whitespace-nowrap">Rs. 13,000<span class="text-sm opacity-75">/month</span></p>
                         </div>
-                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">Double Room
+                        <h3 class="text-xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">2-Seater
                         </h3>
-                        <ul class="grid grid-cols-2 gap-4 mb-8">
+                        <ul class="grid grid-cols-1 gap-3 mb-6">
                             <li class="flex items-center space-x-2 text-gray-600 group/item">
                                 <div
                                     class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
@@ -277,13 +284,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="p-8 relative">
-                        <div class="absolute -top-8 left-8 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
-                            <p class="text-2xl font-bold">Rs. 11,000<span class="text-sm opacity-75">/month</span></p>
+                    <div class="p-4 xl:p-5 relative">
+                        <div class="absolute -top-8 left-4 bg-primary text-white px-3 py-2 rounded-lg shadow-lg">
+                            <p class="text-xl font-bold whitespace-nowrap">Rs. 11,000<span class="text-sm opacity-75">/month</span></p>
                         </div>
-                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">Triple
-                            Sharing</h3>
-                        <ul class="grid grid-cols-2 gap-4 mb-8">
+                        <h3 class="text-xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">3-Seater
+                            (No Attached Bathroom)</h3>
+                        <ul class="grid grid-cols-1 gap-3 mb-6">
                             <li class="flex items-center space-x-2 text-gray-600 group/item">
                                 <div
                                     class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
@@ -304,7 +311,66 @@
                                     class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
                                     <i class="fas fa-bath text-primary"></i>
                                 </div>
-                                <span class="group-hover/item:text-primary transition-colors">Shared bathroom</span>
+                                <span class="group-hover/item:text-primary transition-colors">No attached bathroom</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-600 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                                    <i class="fas fa-plug text-primary"></i>
+                                </div>
+                                <span class="group-hover/item:text-primary transition-colors">Power backup</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Triple Sharing with attached bathroom -->
+                <div class="modern-card group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-72 overflow-hidden rounded-t-lg">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple room with attached bathroom"
+                            class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy" />
+                        <div class="absolute top-4 right-4 z-20">
+                            <span
+                                class="bg-white/90 backdrop-blur text-primary text-sm px-4 py-1 rounded-full shadow-lg">
+                                <i class="fas fa-bath mr-1"></i>Attached
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 xl:p-5 relative">
+                        <div class="absolute -top-8 left-4 bg-primary text-white px-3 py-2 rounded-lg shadow-lg">
+                            <p class="text-xl font-bold whitespace-nowrap">Rs. 11,500<span class="text-sm opacity-75">/month</span></p>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">3-Seater
+                            (Attached Bathroom)</h3>
+                        <ul class="grid grid-cols-1 gap-3 mb-6">
+                            <li class="flex items-center space-x-2 text-gray-600 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                                    <i class="fas fa-bed text-primary"></i>
+                                </div>
+                                <span class="group-hover/item:text-primary transition-colors">Three single beds</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-600 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                                    <i class="fas fa-wifi text-primary"></i>
+                                </div>
+                                <span class="group-hover/item:text-primary transition-colors">WiFi</span>
+                            </li>
+                            <li class="flex items-center space-x-2 text-gray-600 group/item">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                                    <i class="fas fa-bath text-primary"></i>
+                                </div>
+                                <span class="group-hover/item:text-primary transition-colors">Attached bathroom</span>
                             </li>
                             <li class="flex items-center space-x-2 text-gray-600 group/item">
                                 <div
@@ -337,13 +403,13 @@
                             </span>
                         </div>
                     </div>
-                    <div class="p-8 relative">
-                        <div class="absolute -top-8 left-8 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
-                            <p class="text-2xl font-bold">Rs. 10,000<span class="text-sm opacity-75">/month</span></p>
+                    <div class="p-4 xl:p-5 relative">
+                        <div class="absolute -top-8 left-4 bg-primary text-white px-3 py-2 rounded-lg shadow-lg">
+                            <p class="text-xl font-bold whitespace-nowrap">Rs. 10,500<span class="text-sm opacity-75">/month</span></p>
                         </div>
-                        <h3 class="text-2xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">4-Sharing
+                        <h3 class="text-xl font-bold mt-4 mb-4 group-hover:text-primary transition-colors">4-Seater
                         </h3>
-                        <ul class="grid grid-cols-2 gap-4 mb-8">
+                        <ul class="grid grid-cols-1 gap-3 mb-6">
                             <li class="flex items-center space-x-2 text-gray-600 group/item">
                                 <div
                                     class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
@@ -412,15 +478,44 @@
                                     <span class="text-lg">Double Room</span>
                                 </div>
                             </th>
-                            <th class="py-6 px-6 text-center rounded-tr-xl">
+                            <th class="py-6 px-6 text-center">
                                 <div class="flex flex-col items-center">
                                     <i class="fas fa-people-group text-2xl mb-2"></i>
-                                    <span class="text-lg">Triple Sharing</span>
+                                    <span class="text-lg">3-Seater</span>
+                                    <span class="text-sm font-normal">No Attached Bath</span>
+                                </div>
+                            </th>
+                            <th class="py-6 px-6 text-center">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-bath text-2xl mb-2"></i>
+                                    <span class="text-lg">3-Seater</span>
+                                    <span class="text-sm font-normal">Attached Bath</span>
+                                </div>
+                            </th>
+                            <th class="py-6 px-6 text-center rounded-tr-xl">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-users text-2xl mb-2"></i>
+                                    <span class="text-lg">4-Seater</span>
                                 </div>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr class="border-b hover:bg-light/50 transition-colors">
+                            <td class="py-4 px-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <i class="fas fa-tag text-primary"></i>
+                                    </div>
+                                    <span class="font-medium">Monthly Rent</span>
+                                </div>
+                            </td>
+                            <td class="py-4 px-6 text-center font-bold text-primary">Rs. 14,000</td>
+                            <td class="py-4 px-6 text-center font-bold text-primary">Rs. 13,000</td>
+                            <td class="py-4 px-6 text-center font-bold text-primary">Rs. 11,000</td>
+                            <td class="py-4 px-6 text-center font-bold text-primary">Rs. 11,500</td>
+                            <td class="py-4 px-6 text-center font-bold text-primary">Rs. 10,500</td>
+                        </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
                                 <div class="flex items-center space-x-3">
@@ -433,6 +528,8 @@
                             <td class="py-4 px-6 text-center text-primary">Private</td>
                             <td class="py-4 px-6 text-center text-gray-600">Shared (2:1)</td>
                             <td class="py-4 px-6 text-center text-gray-600">Shared (3:1)</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Attached</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Shared</td>
                         </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -445,6 +542,8 @@
                             </td>
                             <td class="py-4 px-6 text-center text-primary">Large Personal Desk</td>
                             <td class="py-4 px-6 text-center text-gray-600">Personal Desk</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
                             <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
                         </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
@@ -459,6 +558,8 @@
                             <td class="py-4 px-6 text-center text-primary">Large Wardrobe</td>
                             <td class="py-4 px-6 text-center text-gray-600">Medium Wardrobe</td>
                             <td class="py-4 px-6 text-center text-gray-600">Compact Wardrobe</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Compact Wardrobe</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Shared Storage</td>
                         </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -472,6 +573,8 @@
                             <td class="py-4 px-6 text-center text-primary">120 sq.ft</td>
                             <td class="py-4 px-6 text-center text-gray-600">180 sq.ft</td>
                             <td class="py-4 px-6 text-center text-gray-600">240 sq.ft</td>
+                            <td class="py-4 px-6 text-center text-gray-600">240 sq.ft</td>
+                            <td class="py-4 px-6 text-center text-gray-600">280 sq.ft</td>
                         </tr>
                         <tr class="hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -483,6 +586,8 @@
                                 </div>
                             </td>
                             <td class="py-4 px-6 text-center text-primary">Premium Package*</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Available*</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Available*</td>
                             <td class="py-4 px-6 text-center text-gray-600">Available*</td>
                             <td class="py-4 px-6 text-center text-gray-600">Available*</td>
                         </tr>
