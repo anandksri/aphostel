@@ -240,8 +240,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     // --- WhatsApp floating pulse ---
-    const waFloat = document.querySelector('.fab.fa-whatsapp') ? document.querySelector('.fab.fa-whatsapp').closest('a') : document.querySelector('.whatsapp-float');
-    if (waFloat && typeof anime !== 'undefined') {
+    const waFloat = document.querySelector('.whatsapp-float');
+    if (waFloat && typeof anime !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         // Add a subtle pulse to the button using anime
         const pulse = anime({
             targets: waFloat,

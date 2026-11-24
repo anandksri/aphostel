@@ -816,7 +816,14 @@ nav .mobile-menu .pb-4 { padding-bottom: 0.5rem; }
 }
 
 /* Enhanced WhatsApp float */
-.whatsapp-float {
+a.whatsapp-float {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    z-index: 40;
     box-shadow: 0 8px 24px rgba(16,185,129,0.25);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
