@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://apboyshostel.com/sitemap.xml
+Sitemap: https://apboyshostel.vercel.app/sitemap.xml
 
 # Allow favicon & manifest crawling
 Allow: /favicons/

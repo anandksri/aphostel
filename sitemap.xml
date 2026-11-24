@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://apboyshostel.com/</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://apboyshostel.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://apboyshostel.com/about.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://apboyshostel.vercel.app/about.html</loc>
   </url>
   <url>
-    <loc>https://apboyshostel.com/rooms.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://apboyshostel.vercel.app/rooms.html</loc>
   </url>
   <url>
-    <loc>https://apboyshostel.com/gallery.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://apboyshostel.vercel.app/gallery.html</loc>
   </url>
   <url>
-    <loc>https://apboyshostel.com/contact.html</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://apboyshostel.vercel.app/contact.html</loc>
   </url>
 </urlset>

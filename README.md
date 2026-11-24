@@ -36,6 +36,15 @@ favicons/         Favicon assets
 
 Clone the repository and open `index.html` in a browser, or serve the directory with a local HTTP server.
 
+## Search and local discovery
+
+- The canonical site is `https://apboyshostel.vercel.app/`. Deploy changes there, verify the site in [Google Search Console](https://search.google.com/search-console/), and submit `https://apboyshostel.vercel.app/sitemap.xml`. Check indexing and crawl reports after deployment.
+- Claim or verify the hostel's [Google Business Profile](https://www.google.com/business/) and keep its location, contact details, hours, and photos accurate and consistent with the website.
+- Confirm the full street address before adding it to the contact page and structured data. Review existing prices, facilities, testimonials, hours, and other claims regularly; remove or correct anything that cannot be verified.
+- If the canonical domain changes, update canonical and social URLs, structured data, `robots.txt`, and `sitemap.xml`, and configure redirects from old URLs where possible.
+
+Search engines and AI search features rely on accessible, useful, accurate content; indexing, rich results, and rankings are not guaranteed.
+
 ## Status
 
 This repository contains the website source and can be improved further with testing, documentation, accessibility checks, and deployment configuration.
