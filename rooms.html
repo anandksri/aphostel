@@ -14,18 +14,18 @@
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="AP Boys Hostel">
-    <meta property="og:title" content="AP Boys Hostel — Best Boys Hostel in Tinkune, Kathmandu">
+    <meta property="og:title" content="Rooms & Rates — AP Boys Hostel">
     <meta property="og:description"
-        content="AP Boys Hostel in Tinkune, Kathmandu — affordable, secure, and comfortable accommodation for boys. Close to CITE, ISMT, Padmashree and other colleges. Managed by Amardip Pandit.">
+        content="Explore room options and monthly rates at AP Boys Hostel in Tinkune, Kathmandu.">
     <meta property="og:type" content="hotel">
-    <meta property="og:url" content="https://apboyshostel.com/">
+    <meta property="og:url" content="https://apboyshostel.com/rooms.html">
     <meta property="og:image" content="https://apboyshostel.com/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AP Boys Hostel — Best Boys Hostel in Tinkune, Kathmandu">
+    <meta name="twitter:title" content="Rooms & Rates — AP Boys Hostel">
     <meta name="twitter:description"
-        content="AP Boys Hostel in Tinkune, Kathmandu — affordable, secure, and comfortable accommodation for boys.">
+        content="Explore room options and monthly rates at AP Boys Hostel in Tinkune, Kathmandu.">
     <meta name="twitter:image" content="https://apboyshostel.com/images/og-image.jpg">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -68,9 +68,9 @@
     </script>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins inner-page rooms-page">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="site-nav bg-white shadow-lg fixed w-full top-0 z-50" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
@@ -84,13 +84,13 @@
                     </div>
                 </div>
                 <!-- Primary Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="nav-links hidden md:flex items-center space-x-8">
                     <a href="index.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Home</a>
                     <a href="about.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">About</a>
                     <a href="rooms.html"
-                        class="py-4 px-2 text-primary font-semibold border-b-2 border-primary">Rooms</a>
+                        class="py-4 px-2 text-primary font-semibold border-b-2 border-primary" aria-current="page">Rooms</a>
                     <a href="gallery.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Gallery</a>
                     <a href="contact.html"
@@ -98,7 +98,7 @@
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
+                    <button class="outline-none mobile-menu-button" type="button" aria-label="Toggle navigation menu">
                         <i class="fas fa-bars text-primary text-2xl"></i>
                     </button>
                 </div>
@@ -112,7 +112,7 @@
                     <li><a href="about.html"
                             class="block text-sm px-2 py-4 text-gray-500 hover:text-primary transition duration-300">About</a>
                     </li>
-                    <li><a href="rooms.html" class="block text-sm px-2 py-4 text-primary font-semibold">Rooms</a></li>
+                    <li><a href="rooms.html" class="block text-sm px-2 py-4 text-primary font-semibold" aria-current="page">Rooms</a></li>
                     <li><a href="gallery.html"
                             class="block text-sm px-2 py-4 text-gray-500 hover:text-primary transition duration-300">Gallery</a>
                     </li>
@@ -125,8 +125,9 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="pt-24 pb-12 bg-light">
+    <section class="page-header rooms-header pt-24 pb-12 bg-light">
         <div class="max-w-7xl mx-auto px-4">
+            <p class="room-eyebrow">FIND YOUR SPACE</p>
             <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Our Rooms & Pricing</h1>
             <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto">
                 Choose from our range of comfortable accommodation options, designed to suit different preferences and
@@ -136,16 +137,16 @@
     </section>
 
     <!-- Room Cards Section -->
-    <section class="py-16 bg-gradient-to-b from-white to-light">
+    <section class="room-section py-16 bg-gradient-to-b from-white to-light">
         <div class="max-w-7xl mx-auto px-4">
             <div class="room-carousel-shell" data-room-carousel>
-                <button type="button" class="room-carousel-control prev" data-room-prev aria-label="Previous rooms">
+                <button type="button" class="room-carousel-control prev" data-room-prev aria-controls="room-options" aria-label="Previous rooms" hidden>
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button type="button" class="room-carousel-control next" data-room-next aria-label="Next rooms">
+                <button type="button" class="room-carousel-control next" data-room-next aria-controls="room-options" aria-label="Next rooms" hidden>
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="room-carousel">
+                <div class="room-carousel" id="room-options" tabindex="0" aria-label="Room options">
                 <!-- Single Room -->
                 <div class="modern-card group" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative h-72 overflow-hidden rounded-t-lg">
@@ -199,9 +200,9 @@
                                 <span class="group-hover/item:text-primary transition-colors">Power backup</span>
                             </li>
                         </ul>
-                        <a href="contact.html"
+                        <a href="https://wa.me/9779851142669?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20visit%20for%20a%201-seater%20room."
                             class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
-                            <span>Book Now</span>
+                            <span>Book a Visit</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
@@ -260,9 +261,9 @@
                                 <span class="group-hover/item:text-primary transition-colors">Power backup</span>
                             </li>
                         </ul>
-                        <a href="contact.html"
+                        <a href="https://wa.me/9779851142669?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20visit%20for%20a%202-seater%20room."
                             class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
-                            <span>Book Now</span>
+                            <span>Book a Visit</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
@@ -321,9 +322,9 @@
                                 <span class="group-hover/item:text-primary transition-colors">Power backup</span>
                             </li>
                         </ul>
-                        <a href="contact.html"
+                        <a href="https://wa.me/9779851142669?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20visit%20for%20a%203-seater%20room%20without%20an%20attached%20bathroom."
                             class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
-                            <span>Book Now</span>
+                            <span>Book a Visit</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
@@ -334,7 +335,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple room with attached bathroom"
+                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple sharing room"
                             class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                             loading="lazy" />
                         <div class="absolute top-4 right-4 z-20">
@@ -380,9 +381,9 @@
                                 <span class="group-hover/item:text-primary transition-colors">Power backup</span>
                             </li>
                         </ul>
-                        <a href="contact.html"
+                        <a href="https://wa.me/9779851142669?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20visit%20for%20a%203-seater%20room%20with%20an%20attached%20bathroom."
                             class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
-                            <span>Book Now</span>
+                            <span>Book a Visit</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
@@ -440,26 +441,29 @@
                                 <span class="group-hover/item:text-primary transition-colors">Power backup</span>
                             </li>
                         </ul>
-                        <a href="contact.html"
+                        <a href="https://wa.me/9779851142669?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20visit%20for%20a%204-seater%20room."
                             class="group flex items-center justify-center space-x-2 bg-primary text-white py-4 rounded-lg hover:bg-primary/90 transform hover:-translate-y-1 transition-all duration-300">
-                            <span>Book Now</span>
+                            <span>Book a Visit</span>
                             <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                 </div>
+                </div>
+                <p class="room-carousel-status" aria-live="polite"></p>
             </div>
         </div>
     </section>
 
     <!-- Facilities Comparison -->
-    <section class="py-16 bg-gradient-to-b from-light to-white">
+    <section class="rooms-comparison py-16 bg-gradient-to-b from-light to-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Facilities Comparison</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Compare our room types to find the perfect accommodation for
                     your needs</p>
             </div>
-            <div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="100">
+            <p class="comparison-hint">Swipe to compare room options <i class="fas fa-arrow-right" aria-hidden="true"></i></p>
+            <div class="comparison-scroll overflow-x-auto" tabindex="0" role="region" aria-label="Room facilities comparison" data-aos="fade-up" data-aos-delay="100">
                 <table class="w-full bg-white rounded-xl shadow-xl">
                     <thead>
                         <tr class="bg-gradient-to-r from-primary to-primary/90 text-white">
@@ -527,7 +531,7 @@
                             </td>
                             <td class="py-4 px-6 text-center text-primary">Private</td>
                             <td class="py-4 px-6 text-center text-gray-600">Shared (2:1)</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Shared (3:1)</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Not attached</td>
                             <td class="py-4 px-6 text-center text-gray-600">Attached</td>
                             <td class="py-4 px-6 text-center text-gray-600">Shared</td>
                         </tr>
@@ -543,8 +547,8 @@
                             <td class="py-4 px-6 text-center text-primary">Large Personal Desk</td>
                             <td class="py-4 px-6 text-center text-gray-600">Personal Desk</td>
                             <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Compact Desk</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
                         </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -558,8 +562,8 @@
                             <td class="py-4 px-6 text-center text-primary">Large Wardrobe</td>
                             <td class="py-4 px-6 text-center text-gray-600">Medium Wardrobe</td>
                             <td class="py-4 px-6 text-center text-gray-600">Compact Wardrobe</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Compact Wardrobe</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Shared Storage</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
                         </tr>
                         <tr class="border-b hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -573,8 +577,8 @@
                             <td class="py-4 px-6 text-center text-primary">120 sq.ft</td>
                             <td class="py-4 px-6 text-center text-gray-600">180 sq.ft</td>
                             <td class="py-4 px-6 text-center text-gray-600">240 sq.ft</td>
-                            <td class="py-4 px-6 text-center text-gray-600">240 sq.ft</td>
-                            <td class="py-4 px-6 text-center text-gray-600">280 sq.ft</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
                         </tr>
                         <tr class="hover:bg-light/50 transition-colors">
                             <td class="py-4 px-6">
@@ -588,8 +592,8 @@
                             <td class="py-4 px-6 text-center text-primary">Premium Package*</td>
                             <td class="py-4 px-6 text-center text-gray-600">Available*</td>
                             <td class="py-4 px-6 text-center text-gray-600">Available*</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Available*</td>
-                            <td class="py-4 px-6 text-center text-gray-600">Available*</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
+                            <td class="py-4 px-6 text-center text-gray-600">Contact us</td>
                         </tr>
                     </tbody>
                 </table>
@@ -600,7 +604,7 @@
     </section>
 
     <!-- Booking Policies & What to Bring -->
-    <section class="py-12">
+    <section class="rooms-policies py-12">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Booking Policies</h2>
             <div class="bg-white p-6 rounded-lg shadow mb-6" data-aos="fade-up" data-aos-delay="100">
@@ -624,7 +628,7 @@
     </section>
 
     <!-- Book Now CTA -->
-    <section class="py-16 bg-gradient-to-r from-primary to-primary/90 text-white">
+    <section class="rooms-cta py-16 bg-gradient-to-r from-primary to-primary/90 text-white">
         <div class="max-w-5xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Ready to Join Our Community?</h2>
             <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -637,7 +641,7 @@
                     <span>Book Your Room</span>
                     <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                <a href="https://wa.me/9851142669"
+                <a href="https://wa.me/9779851142669"
                     class="px-8 py-4 bg-white/10 backdrop-blur text-white font-semibold rounded-lg hover:bg-white/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2">
                     <i class="fab fa-whatsapp text-xl"></i>
                     <span>Chat on WhatsApp</span>
@@ -647,40 +651,38 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">AP Boys Hostel</h3>
-                    <p class="mb-4">A home away from home for focused students in Kathmandu.</p>
-                    <p class="text-gray-400">© 2025 AP Boys Hostel. All rights reserved by AP Boys Hostel.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><span>AP</span> Boys Hostel</a>
+                    <p>A home away from home for focused students in Kathmandu.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Tinkune, Kathmandu</p>
-                    <p class="mb-2"><i class="fas fa-phone mr-2"></i>982-5485498 / 9851142669</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
-                        <li><a href="rooms.html" class="hover:text-primary transition duration-300">Rooms & Pricing</a>
-                        </li>
-                        <li><a href="gallery.html" class="hover:text-primary transition duration-300">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div>
+                    <h2>Get in touch</h2>
+                    <p>Tinkune, Kathmandu</p>
+                    <p><a href="tel:9825485498">982-5485498</a> / <a href="tel:9851142669">9851142669</a></p>
+                    <a class="footer-contact" href="contact.html">Plan a visit <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="mt-8 border-t border-gray-800 pt-6 text-center">
-                <p class="text-sm text-gray-400">Developed with <span class="text-red-400">♥</span> by <a
-                        href="https://anandkeshari.com.np" target="_blank" rel="noopener"
-                        class="text-primary hover:underline">Anand Keshari</a></p>
+            <div class="footer-bottom">
+                <p>© AP Boys Hostel. All rights reserved.</p>
+                <p>Developed by <a href="https://anandkeshari.com.np" target="_blank" rel="noopener noreferrer">Anand Keshari</a></p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/9851142669"
+    <a href="https://wa.me/9779851142669" aria-label="Chat with us on WhatsApp" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
         target="_blank">
         <i class="fab fa-whatsapp text-2xl"></i>

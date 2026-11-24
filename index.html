@@ -71,14 +71,14 @@
     </script>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins home-page">
     <!-- Navigation -->
-    <nav class="bg-white/80 backdrop-blur-sm border-b border-gray-100 fixed w-full top-0 z-50 nav-main">
+    <nav class="site-nav bg-white/80 backdrop-blur-sm border-b border-gray-100 fixed w-full top-0 z-50 nav-main" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
                     <div>
-                        <a href="#" class="flex items-center py-3" aria-label="AP Boys Hostel - Home">
+                        <a href="index.html" class="flex items-center py-3" aria-label="AP Boys Hostel - Home">
                             <span class="font-semibold text-lg flex items-center gap-2">
                                 <span class="brand-ap">AP</span>
                                 <span class="brand-rest text-primary">Boys Hostel</span>
@@ -87,8 +87,8 @@
                     </div>
                 </div>
                 <!-- Primary Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="py-4 px-2 text-primary font-semibold border-b-2 border-primary">Home</a>
+                <div class="nav-links hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="py-4 px-2 text-primary font-semibold border-b-2 border-primary" aria-current="page">Home</a>
                     <a href="about.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">About</a>
                     <a href="rooms.html"
@@ -100,7 +100,7 @@
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
+                    <button class="outline-none mobile-menu-button" type="button" aria-label="Toggle navigation menu">
                         <i class="fas fa-bars text-primary text-2xl"></i>
                     </button>
                 </div>
@@ -108,7 +108,7 @@
             <!-- Mobile Menu -->
             <div class="hidden mobile-menu">
                 <ul class="pb-4">
-                    <li><a href="index.html" class="block text-sm px-2 py-4 text-primary font-semibold">Home</a></li>
+                    <li><a href="index.html" class="block text-sm px-2 py-4 text-primary font-semibold" aria-current="page">Home</a></li>
                     <li><a href="about.html"
                             class="block text-sm px-2 py-4 text-gray-500 hover:text-primary transition duration-300">About</a>
                     </li>
@@ -127,42 +127,29 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen bg-gradient-to-r from-gray-900 to-primary overflow-hidden">
-        <div class="absolute inset-0 bg-[url('images/hero-bg.jpg')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-primary/50"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\" 30\" height=\"30\" viewBox=\"0 0 30
-            30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.22676 0C1.91374 0 2.45351 0.539773
-            2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0
-            0.539773 0.539773 0 1.22676 0Z\" fill=\"rgba(255,255,255,0.07)\"%3E%3C/path%3E%3C/svg%3E')] opacity-10">
-        </div>
-        <div class="relative h-full flex items-center justify-center text-center text-white px-4" data-aos="fade-up">
-            <div>
-                <span class="inline-block text-secondary font-semibold mb-4 tracking-wider" data-aos="fade-up"
-                    data-aos-delay="100">WELCOME TO AP BOYS HOSTEL</span>
-                <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">A Home Away From
-                    Home</h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200" data-aos="fade-up" data-aos-delay="300">Where
-                    expectations meet reality !</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <a href="contact.html"
-                        class="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block transform hover:scale-105">
-                        Book a Visit
-                    </a>
-                    <a href="rooms.html"
-                        class="bg-white/10 backdrop-blur hover:bg-white/20 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
-                        Explore Rooms
-                    </a>
+    <section class="home-hero">
+        <div class="home-hero-inner max-w-7xl mx-auto">
+            <div class="home-hero-content" data-aos="fade-up">
+                <p class="hero-eyebrow"><span aria-hidden="true"></span> AP BOYS HOSTEL · TINKUNE, KATHMANDU</p>
+                <h1>A home away<br>from <em>home.</em></h1>
+                <p class="hero-description">A comfortable place to live, study, and feel at home in Kathmandu.</p>
+                <div class="hero-actions">
+                    <a href="rooms.html" class="hero-button hero-button-primary">Explore Rooms <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="contact.html" class="hero-button hero-button-secondary">Book a Visit</a>
                 </div>
+                <p class="hero-note"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tinkune, Kathmandu</p>
             </div>
-            </div>
+            <figure class="home-hero-photo" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/rooms/exterior.jpg" alt="Exterior of AP Boys Hostel">
+                <figcaption><span>WELCOME TO</span><strong>AP Boys Hostel</strong></figcaption>
+            </figure>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-light to-transparent"></div>
     </section>
 
     <!-- Highlights Section -->
-    <section class="py-16 bg-light">
+    <section class="home-highlights py-16 bg-light">
         <div class="max-w-7xl mx-auto px-4">
+            <p class="room-eyebrow">THE EVERYDAY ESSENTIALS</p>
             <h2 class="text-3xl font-bold text-center mb-12">Our Highlights</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- WiFi Card -->
@@ -194,7 +181,7 @@
     </section>
 
     <!-- Facilities Section -->
-    <section class="py-12">
+    <section class="home-facilities py-12">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Facilities & Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -239,7 +226,7 @@
     </section>
 
     <!-- How to Book Section -->
-    <section class="py-12 bg-light">
+    <section class="home-steps py-12 bg-light">
         <div class="max-w-5xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">How to Book a Room</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -263,7 +250,7 @@
     </section>
 
     <!-- FAQ Preview -->
-    <section class="py-16 bg-gradient-to-b from-white to-light">
+    <section class="home-faq py-16 bg-gradient-to-b from-white to-light">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Frequently Asked Questions</h2>
             <div class="space-y-4">
@@ -346,26 +333,27 @@
     </section>
 
     <!-- Rooms Preview Section -->
-    <section class="py-16">
+    <section class="room-section py-16">
         <div class="max-w-7xl mx-auto px-4">
+            <p class="room-eyebrow">YOUR SPACE, YOUR CHOICE</p>
             <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Our Rooms</h2>
             <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
                 Choose from our range of comfortable accommodations designed for your academic success
             </p>
             <div class="room-carousel-shell" data-room-carousel>
-                <button type="button" class="room-carousel-control prev" data-room-prev aria-label="Previous rooms">
+                <button type="button" class="room-carousel-control prev" data-room-prev aria-controls="home-rooms" aria-label="Previous rooms" hidden>
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button type="button" class="room-carousel-control next" data-room-next aria-label="Next rooms">
+                <button type="button" class="room-carousel-control next" data-room-next aria-controls="home-rooms" aria-label="Next rooms" hidden>
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="room-carousel">
+                <div class="room-carousel" id="home-rooms" tabindex="0" aria-label="Room options">
                 <!-- Single Room -->
                 <div class="modern-card group" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative h-56 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                         <img src="images/rooms/single-room.jpg" alt="Single room preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                         <div
                             class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-primary z-20">
                             Most Popular
@@ -404,7 +392,7 @@
                     <div class="relative h-56 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                         <img src="images/rooms/double-sharing.jpg" alt="Double room preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                         <div
                             class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-secondary z-20">
                             Best Value
@@ -443,10 +431,10 @@
                     <div class="relative h-56 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                         <img src="images/rooms/tripple-sharing.jpg" alt="Triple room preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                         <div
                             class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-green-600 z-20">
-                            Economic Choice
+                            No Attached Bath
                         </div>
                     </div>
                     <div class="p-4 xl:p-5">
@@ -481,8 +469,8 @@
                 <div class="modern-card group" data-aos="fade-up" data-aos-delay="500">
                     <div class="relative h-56 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple room with attached bathroom"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <img src="images/rooms/tripple-sharing.jpg" alt="Triple sharing room"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-primary z-20">Attached Bath</div>
                     </div>
                     <div class="p-4 xl:p-5">
@@ -507,7 +495,7 @@
                     <div class="relative h-56 overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                         <img src="images/rooms/four-sharing.jpg" alt="Four seater room preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full px-4 py-1 text-sm font-semibold text-secondary z-20">Budget Choice</div>
                     </div>
                     <div class="p-4 xl:p-5">
@@ -526,12 +514,14 @@
                         </a>
                     </div>
                 </div>
+                </div>
+                <p class="room-carousel-status" aria-live="polite"></p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 bg-light">
+    <section class="home-testimonials py-16 bg-light">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What Our Students Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -602,7 +592,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-primary text-white">
+    <section class="home-cta py-16 bg-primary text-white">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-4">Ready to Join Our Community?</h2>
             <p class="mb-8 text-lg">Contact us now to book a visit or learn more about our facilities.</p>
@@ -614,40 +604,38 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">AP Boys Hostel</h3>
-                    <p class="mb-4">A home away from home for focused students in Kathmandu.</p>
-                    <p class="text-gray-400">© 2025 AP Boys Hostel. All rights reserved by AP Boys Hostel.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><span>AP</span> Boys Hostel</a>
+                    <p>A home away from home for focused students in Kathmandu.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Tinkune, Kathmandu</p>
-                    <p class="mb-2"><i class="fas fa-phone mr-2"></i>982-5485498 / 9851142669</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
-                        <li><a href="rooms.html" class="hover:text-primary transition duration-300">Rooms & Pricing</a>
-                        </li>
-                        <li><a href="gallery.html" class="hover:text-primary transition duration-300">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div>
+                    <h2>Get in touch</h2>
+                    <p>Tinkune, Kathmandu</p>
+                    <p><a href="tel:9825485498">982-5485498</a> / <a href="tel:9851142669">9851142669</a></p>
+                    <a class="footer-contact" href="contact.html">Plan a visit <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="mt-8 border-t border-gray-800 pt-6 text-center">
-                <p class="text-sm text-gray-400">Developed with <span class="text-red-400">♥</span> by <a
-                        href="https://anandkeshari.com.np" target="_blank" rel="noopener"
-                        class="text-primary hover:underline">Anand Keshari</a></p>
+            <div class="footer-bottom">
+                <p>© AP Boys Hostel. All rights reserved.</p>
+                <p>Developed by <a href="https://anandkeshari.com.np" target="_blank" rel="noopener noreferrer">Anand Keshari</a></p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/9851142669"
+    <a href="https://wa.me/9779851142669" aria-label="Chat with us on WhatsApp" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
         target="_blank">
         <i class="fab fa-whatsapp text-2xl"></i>

@@ -69,9 +69,9 @@
     </script>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins inner-page gallery-page">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="site-nav bg-white shadow-lg fixed w-full top-0 z-50" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <!-- Primary Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="nav-links hidden md:flex items-center space-x-8">
                     <a href="index.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Home</a>
                     <a href="about.html"
@@ -93,13 +93,13 @@
                     <a href="rooms.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Rooms</a>
                     <a href="gallery.html"
-                        class="py-4 px-2 text-primary font-semibold border-b-2 border-primary">Gallery</a>
+                        class="py-4 px-2 text-primary font-semibold border-b-2 border-primary" aria-current="page">Gallery</a>
                     <a href="contact.html"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Contact</a>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
+                    <button class="outline-none mobile-menu-button" type="button" aria-label="Toggle navigation menu">
                         <i class="fas fa-bars text-primary text-2xl"></i>
                     </button>
                 </div>
@@ -116,7 +116,7 @@
                     <li><a href="rooms.html"
                             class="block text-sm px-2 py-4 text-gray-500 hover:text-primary transition duration-300">Rooms</a>
                     </li>
-                    <li><a href="gallery.html" class="block text-sm px-2 py-4 text-primary font-semibold">Gallery</a>
+                    <li><a href="gallery.html" class="block text-sm px-2 py-4 text-primary font-semibold" aria-current="page">Gallery</a>
                     </li>
                     <li><a href="contact.html"
                             class="block text-sm px-2 py-4 text-gray-500 hover:text-primary transition duration-300">Contact</a>
@@ -127,8 +127,9 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="pt-24 pb-12 bg-light">
+    <section class="page-header pt-24 pb-12 bg-light">
         <div class="max-w-7xl mx-auto px-4">
+            <p class="room-eyebrow">A LOOK INSIDE</p>
             <h1 class="text-4xl md:text-5xl font-bold text-center mb-8">Our Gallery</h1>
             <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto">
                 Take a visual tour of our facilities and get a glimpse of life at AP Boys Hostel.
@@ -137,32 +138,32 @@
     </section>
 
     <!-- Gallery Filter -->
-    <section class="py-12 bg-white">
+    <section class="gallery-filters py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
                 <button
                     class="px-8 py-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-300 filter-btn active shadow-lg shadow-primary/20 hover:scale-105"
-                    data-filter="all">
+                    data-filter="all" aria-pressed="true">
                     <i class="fas fa-border-all mr-2"></i>All
                 </button>
                 <button
                     class="px-8 py-3 rounded-full bg-white text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 filter-btn shadow-lg hover:scale-105"
-                    data-filter="hostel">
+                    data-filter="hostel" aria-pressed="false">
                     <i class="fas fa-building mr-2"></i>Hostel
                 </button>
                 <button
                     class="px-8 py-3 rounded-full bg-white text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 filter-btn shadow-lg hover:scale-105"
-                    data-filter="rooms">
+                    data-filter="rooms" aria-pressed="false">
                     <i class="fas fa-bed mr-2"></i>Rooms
                 </button>
                 <button
                     class="px-8 py-3 rounded-full bg-white text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 filter-btn shadow-lg hover:scale-105"
-                    data-filter="food">
+                    data-filter="food" aria-pressed="false">
                     <i class="fas fa-utensils mr-2"></i>Food
                 </button>
                 <button
                     class="px-8 py-3 rounded-full bg-white text-gray-700 hover:bg-primary hover:text-white transition-all duration-300 filter-btn shadow-lg hover:scale-105"
-                    data-filter="students">
+                    data-filter="students" aria-pressed="false">
                     <i class="fas fa-users mr-2"></i>Students
                 </button>
             </div>
@@ -170,14 +171,13 @@
     </section>
 
     <!-- Gallery Grid -->
-    <section class="py-12">
+    <section class="gallery-photos py-12">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="text-center text-gray-600 mb-8" data-aos="fade-up">Click any image to view larger. Replace
-                placeholders with your real photos in the <code>images/</code> folder.</p>
+            <p class="text-center text-gray-600 mb-8" data-aos="fade-up">Select a photo to take a closer look.</p>
             <div class="gallery-grid">
                 <!-- Hostel Images -->
-                <div class="gallery-item modern-card group" data-category="hostel"
-                    data-src="images/placeholders/gallery-placeholder.svg" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item modern-card group" data-category="hostel" role="button" tabindex="0" aria-label="View hostel exterior photo"
+                    data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-w-4 aspect-h-3 rounded-t-lg overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -197,8 +197,8 @@
                     </div>
                 </div>
 
-                <div class="gallery-item modern-card group" data-category="hostel"
-                    data-src="images/placeholders/gallery-placeholder.svg" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item modern-card group" data-category="hostel" role="button" tabindex="0" aria-label="View common area photo"
+                    data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-w-4 aspect-h-3 rounded-t-lg overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -219,8 +219,8 @@
                 </div>
 
                 <!-- Room Images -->
-                <div class="gallery-item modern-card group" data-category="rooms"
-                    data-src="images/placeholders/gallery-placeholder.svg" data-aos="fade-up" data-aos-delay="300">
+                <div class="gallery-item modern-card group" data-category="rooms" role="button" tabindex="0" aria-label="View single room photo"
+                    data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-w-4 aspect-h-3 rounded-t-lg overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -241,8 +241,8 @@
                 </div>
 
                 <!-- Food Images -->
-                <div class="gallery-item modern-card group" data-category="food"
-                    data-src="images/placeholders/gallery-placeholder.svg" data-aos="fade-up" data-aos-delay="400">
+                <div class="gallery-item modern-card group" data-category="food" role="button" tabindex="0" aria-label="View dining area photo"
+                    data-aos="fade-up" data-aos-delay="400">
                     <div class="relative aspect-w-4 aspect-h-3 rounded-t-lg overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -263,8 +263,8 @@
                 </div>
 
                 <!-- Student Images -->
-                <div class="gallery-item modern-card group" data-category="students"
-                    data-src="images/placeholders/gallery-placeholder.svg" data-aos="fade-up" data-aos-delay="500">
+                <div class="gallery-item modern-card group" data-category="students" role="button" tabindex="0" aria-label="View study room photo"
+                    data-aos="fade-up" data-aos-delay="500">
                     <div class="relative aspect-w-4 aspect-h-3 rounded-t-lg overflow-hidden">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -288,45 +288,44 @@
     </section>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <!-- Lightbox content will be dynamically added -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview" aria-hidden="true">
+        <button type="button" class="lightbox-close" aria-label="Close photo preview"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <img alt="">
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="site-footer">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">AP Boys Hostel</h3>
-                    <p class="mb-4">A home away from home for focused students in Kathmandu.</p>
-                    <p class="text-gray-400">© 2025 AP Boys Hostel. All rights reserved by AP Boys Hostel.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><span>AP</span> Boys Hostel</a>
+                    <p>A home away from home for focused students in Kathmandu.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i>Tinkune, Kathmandu</p>
-                    <p class="mb-2"><i class="fas fa-phone mr-2"></i>982-5485498 / 9851142669</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
-                        <li><a href="rooms.html" class="hover:text-primary transition duration-300">Rooms & Pricing</a>
-                        </li>
-                        <li><a href="gallery.html" class="hover:text-primary transition duration-300">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms & Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div>
+                    <h2>Get in touch</h2>
+                    <p>Tinkune, Kathmandu</p>
+                    <p><a href="tel:9825485498">982-5485498</a> / <a href="tel:9851142669">9851142669</a></p>
+                    <a class="footer-contact" href="contact.html">Plan a visit <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="mt-8 border-t border-gray-800 pt-6 text-center">
-                <p class="text-sm text-gray-400">Developed with <span class="text-red-400">♥</span> by <a
-                        href="https://anandkeshari.com.np" target="_blank" rel="noopener"
-                        class="text-primary hover:underline">Anand Keshari</a></p>
+            <div class="footer-bottom">
+                <p>© AP Boys Hostel. All rights reserved.</p>
+                <p>Developed by <a href="https://anandkeshari.com.np" target="_blank" rel="noopener noreferrer">Anand Keshari</a></p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/9851142669"
+    <a href="https://wa.me/9779851142669" aria-label="Chat with us on WhatsApp" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
         target="_blank">
         <i class="fab fa-whatsapp text-2xl"></i>

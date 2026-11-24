@@ -18,17 +18,44 @@ document.addEventListener('DOMContentLoaded', async function() {
         const carousel = shell.querySelector('.room-carousel');
         const previous = shell.querySelector('[data-room-prev]');
         const next = shell.querySelector('[data-room-next]');
-        if (!carousel) return;
+        const status = shell.querySelector('.room-carousel-status');
+        if (!carousel || !previous || !next || !status) return;
 
-        const scrollCards = direction => {
-            const card = carousel.querySelector('.modern-card');
-            const gap = parseFloat(getComputedStyle(carousel).columnGap) || 20;
-            const distance = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth * 0.8;
-            carousel.scrollBy({ left: distance * direction, behavior: 'smooth' });
+        const cards = [...carousel.querySelectorAll('.modern-card')];
+        const updateControls = () => {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            previous.disabled = carousel.scrollLeft <= 1;
+            next.disabled = carousel.scrollLeft >= maxScroll - 1;
+            const container = carousel.getBoundingClientRect();
+            const visible = cards.filter(card => {
+                const bounds = card.getBoundingClientRect();
+                return bounds.right > container.left + 1 && bounds.left < container.right - 1;
+            });
+            if (visible.length) {
+                const first = cards.indexOf(visible[0]) + 1;
+                const last = cards.indexOf(visible[visible.length - 1]) + 1;
+                status.textContent = first === last
+                    ? `Room ${first} of ${cards.length}`
+                    : `Rooms ${first}\u2013${last} of ${cards.length}`;
+            }
         };
 
-        previous?.addEventListener('click', () => scrollCards(-1));
-        next?.addEventListener('click', () => scrollCards(1));
+        const scrollCards = direction => {
+            const card = cards[0];
+            if (!card) return;
+            const gap = parseFloat(getComputedStyle(carousel).columnGap);
+            const distance = card.getBoundingClientRect().width + gap;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            carousel.scrollBy({ left: distance * direction, behavior: reducedMotion ? 'instant' : 'smooth' });
+        };
+
+        previous.hidden = false;
+        next.hidden = false;
+        previous.addEventListener('click', () => scrollCards(-1));
+        next.addEventListener('click', () => scrollCards(1));
+        carousel.addEventListener('scroll', updateControls, { passive: true });
+        window.addEventListener('resize', updateControls);
+        updateControls();
     });
 
     // Handle FAQ toggles with smooth animations
@@ -58,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 icon.style.transform = 'rotate(180deg)';
                 
-                if (typeof anime !== 'undefined') {
+                if (typeof anime !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                     anime({
                         targets: content,
                         opacity: [0, 1],
@@ -68,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     });
                 }
             } else {
-                if (typeof anime !== 'undefined') {
+                if (typeof anime !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                     anime({
                         targets: content,
                         opacity: 0,
@@ -93,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const cards = document.querySelectorAll('.modern-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            if (typeof anime !== 'undefined') {
+            if (typeof anime !== 'undefined' && window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 anime({
                     targets: card,
                     translateY: -8,
@@ -105,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
         
         card.addEventListener('mouseleave', () => {
-            if (typeof anime !== 'undefined') {
+            if (typeof anime !== 'undefined' && window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 anime({
                     targets: card,
                     translateY: 0,
@@ -116,6 +143,45 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         });
     });
+
+    // --- Mobile menu ---
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.setAttribute('aria-controls', 'mobile-menu');
+        mobileMenu.setAttribute('id', 'mobile-menu');
+
+        const setMenuOpen = open => {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenu.classList.toggle('show', open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenu.setAttribute('aria-hidden', String(!open));
+        };
+        setMenuOpen(false);
+
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setMenuOpen(!mobileMenu.classList.contains('show'));
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('show') && !mobileMenu.contains(e.target)) {
+                setMenuOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('show')) {
+                setMenuOpen(false);
+                mobileMenuButton.focus();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.matchMedia('(min-width: 768px)').matches) setMenuOpen(false);
+        });
+    }
 
     // Load AOS and anime.js if they're not present
     try {
@@ -136,63 +202,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Init AOS safely
     if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-    }
-
-    // --- Mobile menu ---
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-        // initialize ARIA
-        mobileMenuButton.setAttribute('aria-controls', 'mobile-menu');
-        mobileMenu.setAttribute('id', 'mobile-menu');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-
-        mobileMenuButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = mobileMenu.classList.contains('show');
-            if (isOpen) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('show');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-            } else {
-                mobileMenu.classList.remove('hidden');
-                // slight delay to allow CSS transition
-                requestAnimationFrame(() => mobileMenu.classList.add('show'));
-                mobileMenuButton.setAttribute('aria-expanded', 'true');
-                mobileMenu.setAttribute('aria-hidden', 'false');
-            }
-        });
-
-        // Close when clicking outside (with safety checks)
-        document.addEventListener('click', (e) => {
-            const isOpen = mobileMenu.classList.contains('show');
-            if (!isOpen) return;
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('show');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
-                mobileMenu.setAttribute('aria-hidden', 'true');
-            }
-        });
-
-        // Close on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.key === 'Esc') {
-                if (mobileMenu.classList.contains('show')) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('show');
-                    mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    mobileMenu.setAttribute('aria-hidden', 'true');
-                }
-            }
-        });
-
-        // Prevent clicks inside the menu from bubbling to document
-        mobileMenu.addEventListener('click', (e) => e.stopPropagation());
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true,
+            disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches });
     }
 
     // Smooth scroll for internal anchors (only if target exists)
@@ -248,71 +259,70 @@ document.addEventListener('DOMContentLoaded', async function() {
     // --- Gallery filtering & lightbox ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-    const lightbox = document.querySelector('.lightbox') || (() => {
-        const lb = document.createElement('div');
-        lb.className = 'lightbox';
-        document.body.appendChild(lb);
-        return lb;
-    })();
-
-    // Helper to show/hide items with animation
-    function showItem(item) {
-        item.style.display = '';
-        if (typeof anime !== 'undefined') {
-            anime({ targets: item, opacity: [0,1], scale: [0.96,1], duration: 350, easing: 'easeOutCubic' });
-        } else {
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-        }
-    }
-    function hideItem(item) {
-        if (typeof anime !== 'undefined') {
-            anime({ targets: item, opacity: [1,0], scale: [1,0.96], duration: 250, easing: 'easeOutCubic', complete: () => item.style.display = 'none' });
-        } else {
-            item.style.opacity = '0';
-            item.style.display = 'none';
-        }
-    }
+    const lightbox = document.querySelector('.lightbox');
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.getAttribute('data-filter');
-            filterButtons.forEach(b => b.classList.remove('bg-primary','text-white'));
-            btn.classList.add('bg-primary','text-white');
+            filterButtons.forEach(b => {
+                const active = b === btn;
+                b.classList.toggle('active', active);
+                b.setAttribute('aria-pressed', String(active));
+            });
 
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                if (filter === 'all' || filter === category) showItem(item);
-                else hideItem(item);
+                item.style.display = filter === 'all' || filter === category ? '' : 'none';
             });
         });
     });
 
-    // Lightbox click handling (works if img inside or data-src on item)
-    galleryItems.forEach(item => {
-        const img = item.querySelector('img');
-        item.style.cursor = 'pointer';
-        item.addEventListener('click', () => {
-            const src = (img && img.src) || item.getAttribute('data-src') || '';
-            if (!src) return; // nothing to show
-            lightbox.innerHTML = '';
-            const lightImg = document.createElement('img');
-            lightImg.src = src;
-            lightbox.appendChild(lightImg);
-            lightbox.classList.add('active');
-            if (typeof anime !== 'undefined') anime({ targets: lightImg, opacity: [0,1], scale: [0.96,1], duration: 300, easing: 'easeOutCubic' });
-        });
-    });
+    if (lightbox) {
+        const lightImg = lightbox.querySelector('img');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        let lastItem;
 
-    lightbox.addEventListener('click', (e) => {
-        const img = lightbox.querySelector('img');
-        if (!img) { lightbox.classList.remove('active'); return; }
-        if (typeof anime !== 'undefined') {
-            anime({ targets: img, opacity: [1,0], scale: [1,0.96], duration: 220, easing: 'easeOutCubic', complete: () => lightbox.classList.remove('active') });
-        } else {
+        const openLightbox = item => {
+            const image = item.querySelector('img');
+            if (!image || !lightImg || !closeButton) {
+                console.error('Cannot open photo preview: gallery markup is incomplete.');
+                return;
+            }
+            lastItem = item;
+            lightImg.src = image.src;
+            lightImg.alt = image.alt;
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            closeButton.focus();
+        };
+
+        const closeLightbox = () => {
             lightbox.classList.remove('active');
-        }
-    });
+            lightbox.setAttribute('aria-hidden', 'true');
+            if (lastItem) lastItem.focus();
+        };
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => openLightbox(item));
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(item);
+                }
+            });
+        });
+
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox || (closeButton && closeButton.contains(e.target))) closeLightbox();
+        });
+        lightbox.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                if (closeButton) closeButton.focus();
+            }
+        });
+    }
 
     // --- Button ripple effect for .btn-primary ---
     document.querySelectorAll('.btn-primary').forEach(btn => {

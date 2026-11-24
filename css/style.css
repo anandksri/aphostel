@@ -17,6 +17,272 @@ body {
     overflow-x: hidden;
 }
 
+.home-hero {
+    background: #f7f5ef;
+    color: #172554;
+    overflow: hidden;
+}
+
+.home-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+    padding: 8.5rem 2rem 5rem;
+}
+
+.home-hero-content {
+    max-width: 38rem;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+    color: #965020;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.6;
+}
+
+.hero-eyebrow span {
+    width: 2rem;
+    height: 1px;
+    background: #c6874f;
+    flex-shrink: 0;
+}
+
+.home-hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3.5rem, 5.7vw, 5.75rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+}
+
+.home-hero h1 em {
+    color: #a75924;
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 29rem;
+    margin: 1.5rem 0 2rem;
+    color: #526078;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.hero-button {
+    display: inline-flex;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #172e60;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-button-primary {
+    background: #172e60;
+    color: white;
+}
+
+.hero-button-primary:hover {
+    background: #24427f;
+}
+
+.hero-button-secondary {
+    color: #172e60;
+}
+
+.hero-button-secondary:hover {
+    background: #e9edf4;
+}
+
+.hero-button:focus-visible {
+    outline: 3px solid #c6874f;
+    outline-offset: 3px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+    color: #657187;
+    font-size: 0.8rem;
+}
+
+.hero-note i {
+    color: #a75924;
+}
+
+.home-hero-photo {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    aspect-ratio: 1.1;
+    border-radius: 1.5rem 1.5rem 1.5rem 5rem;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(28, 37, 57, 0.16);
+}
+
+.home-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-hero-photo figcaption {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
+}
+
+.home-hero-photo figcaption span {
+    color: #965020;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.home-hero-photo figcaption strong {
+    font-size: 0.9rem;
+}
+
+.home-page h2,
+.rooms-header h1,
+.room-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+.home-page h2 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    line-height: 1.2;
+}
+
+.home-page nav {
+    border-bottom: 1px solid rgba(23, 37, 84, 0.06);
+}
+
+.home-page .home-highlights,
+.home-page .home-steps,
+.home-page .home-testimonials {
+    background: #f7f5ef;
+}
+
+.home-highlights .grid > div,
+.home-facilities .grid > div,
+.home-steps .grid > div {
+    border: 1px solid #e8e8e3;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(23, 37, 84, 0.05);
+}
+
+.home-highlights .grid > div {
+    padding: 2rem;
+}
+
+.home-highlights .grid > div > div {
+    display: inline-flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: #f2f5fb;
+    font-size: 1.35rem;
+}
+
+.home-highlights h3,
+.home-facilities h3,
+.home-steps .font-semibold {
+    color: #172554;
+}
+
+.home-steps .text-2xl {
+    color: #a75924;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.home-page .home-cta {
+    background: #172e60;
+}
+
+.home-cta h2 {
+    color: #fff;
+}
+
+.home-cta > div {
+    max-width: 48rem;
+}
+
+.home-cta a {
+    color: #172e60;
+}
+
+.home-page footer {
+    background: #101c35;
+}
+
+.room-section {
+    background: #f7f5ef;
+}
+
+.room-eyebrow {
+    margin-bottom: 0.75rem;
+    color: #a34a10;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-align: center;
+}
+
+section.rooms-header {
+    background: #f7f5ef;
+}
+
+.rooms-header h1,
+.room-section h2 {
+    color: #172554;
+    letter-spacing: -0.035em;
+}
+
+.comparison-hint {
+    display: none;
+    margin: -1rem 0 0.75rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.comparison-scroll:focus-visible {
+    outline: 3px solid #fb923c;
+    outline-offset: 3px;
+}
+
 /* Modern gradient backgrounds */
 .gradient-primary {
     background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
@@ -64,14 +330,15 @@ body {
 /* Enhanced Modern Gallery Grid */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
     gap: 2rem;
     padding: 1.5rem;
 }
 
 .modern-card {
     background: white;
-    border-radius: 0.75rem;
+    border: 1px solid #e8edf5;
+    border-radius: 1.125rem;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -85,33 +352,84 @@ body {
 /* Room card carousel */
 .room-carousel-shell {
     position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 6rem) 44px minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .room-carousel {
+    grid-column: 1 / -1;
+    grid-row: 1;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(260px, 310px);
+    grid-auto-columns: calc((100% - 2.5rem) / 3);
     gap: 1.25rem;
     overflow-x: auto;
     padding: 0.25rem 0.25rem 1.25rem;
     scroll-padding-inline: 0.25rem;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-.room-carousel::-webkit-scrollbar {
-    display: none;
+    scrollbar-width: thin;
+    scrollbar-color: #b8c5e8 transparent;
 }
 
 .room-carousel > .modern-card {
     min-width: 0;
     height: 100%;
     scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    border-color: #e8e8e3;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+}
+
+.room-carousel > .modern-card > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.room-carousel > .modern-card h3 {
+    color: #172554;
+    letter-spacing: -0.025em;
+}
+
+.room-carousel > .modern-card > div:last-child > p {
+    line-height: 1.6;
+}
+
+.room-carousel > .modern-card li > div {
+    flex-shrink: 0;
+}
+
+.room-carousel > .modern-card > div:last-child > a {
+    margin-top: auto;
+    min-height: 3rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    background: #172e60;
+    box-shadow: none;
+}
+
+.room-carousel > .modern-card > div:last-child > a:hover {
+    background: #24427f;
+}
+
+.room-carousel-status {
+    grid-column: 3;
+    grid-row: 2;
+    min-height: 1.5rem;
+    margin: 0;
+    color: #64748b;
+    font-size: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .room-carousel-control {
-    position: absolute;
-    top: 35%;
+    position: static;
+    grid-row: 2;
     z-index: 30;
     width: 44px;
     height: 44px;
@@ -119,7 +437,8 @@ body {
     border-radius: 9999px;
     background: #fff;
     color: #1e40af;
-    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.18);
+    border: 1px solid #dbe4f3;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.08);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -133,34 +452,150 @@ body {
     color: #fff;
 }
 
+.room-carousel-control[hidden] {
+    display: none;
+}
+
+.room-carousel-control:disabled {
+    opacity: 0.45;
+    cursor: default;
+    transform: none;
+    background: #fff;
+    color: #1e40af;
+}
+
+.room-carousel-control:focus-visible,
+.room-carousel:focus-visible {
+    outline: 3px solid #fb923c;
+    outline-offset: 3px;
+}
+
 .room-carousel-control.prev {
-    left: -22px;
+    grid-column: 2;
 }
 
 .room-carousel-control.next {
-    right: -22px;
+    grid-column: 4;
+}
+
+@media (max-width: 1023px) {
+    .room-carousel {
+        grid-auto-columns: calc((100% - 1.25rem) / 2);
+    }
 }
 
 @media (max-width: 767px) {
+    .home-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        padding: 7rem 1.25rem 3rem;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(2.55rem, 9.5vw, 4rem);
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 1.25rem;
+        font-size: 0.65rem;
+    }
+
+    .hero-description {
+        margin: 1.1rem 0 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-note {
+        margin-top: 1.5rem;
+    }
+
+    .home-hero-photo {
+        aspect-ratio: 1.4;
+        border-radius: 1rem 1rem 1rem 3rem;
+    }
+
+    .home-hero-photo figcaption {
+        right: auto;
+        left: 1rem;
+    }
+}
+
+@media (max-width: 639px) {
+    .gallery-grid {
+        padding: 0;
+        gap: 1.25rem;
+    }
+
+    .hero-button {
+        flex: 1 1 auto;
+        padding-inline: 0.6rem;
+        font-size: 0.8rem;
+        gap: 0.45rem;
+        white-space: nowrap;
+    }
+
+    .home-highlights {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .home-highlights .grid {
+        gap: 1rem;
+    }
+
+    .home-highlights .grid > div {
+        padding: 1.5rem;
+    }
+
+    .rooms-header {
+        padding-top: 6.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .rooms-header h1 {
+        margin-bottom: 1rem;
+        font-size: 2.25rem;
+        line-height: 1.15;
+    }
+
+    .rooms-header p:not(.room-eyebrow) {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .room-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     .room-carousel {
-        grid-auto-columns: 82%;
-        margin-inline: -0.25rem;
-        padding-inline: 0.25rem;
+        grid-auto-columns: 100%;
     }
 
-    .room-carousel-control {
-        top: auto;
-        bottom: -58px;
-        width: 40px;
-        height: 40px;
+    .room-carousel > .modern-card > div:first-child {
+        height: auto;
+        aspect-ratio: 1.5;
+        flex-shrink: 0;
     }
 
-    .room-carousel-control.prev {
-        left: calc(50% - 48px);
+    .room-carousel > .modern-card > div:last-child {
+        padding: 1.25rem;
     }
 
-    .room-carousel-control.next {
-        right: calc(50% - 48px);
+    .comparison-hint {
+        display: block;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .room-carousel,
+    .room-carousel * {
+        scroll-behavior: auto;
+        transition: none;
     }
 }
 
@@ -269,25 +704,29 @@ body {
 }
 
 /* Mobile menu layout for small screens */
-.nav-main .mobile-menu {
+nav .mobile-menu {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     z-index: 60;
     padding: 0.75rem 1rem;
-    display: block; /* Tailwind's 'hidden' will still control visibility */
+    display: block;
     box-shadow: 0 10px 30px rgba(2,6,23,0.15);
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
 
-.nav-main .mobile-menu ul {
+nav .mobile-menu.hidden {
+    display: none;
+}
+
+nav .mobile-menu ul {
     margin: 0;
     padding: 0.25rem 0;
 }
 
-.nav-main .mobile-menu ul li a {
+nav .mobile-menu ul li a {
     display: block;
     padding: 0.85rem 1rem;
     border-radius: 0.5rem;
@@ -295,15 +734,21 @@ body {
     font-weight: 600;
 }
 
-.nav-main .mobile-menu ul li a:hover,
-.nav-main .mobile-menu ul li a:focus {
+nav .mobile-menu ul li a:hover,
+nav .mobile-menu ul li a:focus {
     background: rgba(30,64,175,0.06);
     color: var(--primary-color, #1e40af);
     outline: none;
 }
 
 /* Make sure mobile menu is easy to tap */
-.nav-main .mobile-menu .pb-4 { padding-bottom: 0.5rem; }
+nav .mobile-menu .pb-4 { padding-bottom: 0.5rem; }
+
+@media (min-width: 768px) {
+    nav .mobile-menu {
+        display: none;
+    }
+}
 
 @keyframes slideDown {
     from {
@@ -446,5 +891,417 @@ body {
 }
 
 /* Mobile menu improvements (keeps existing JS hooks) */
-.mobile-menu-button { background: transparent; border: none; }
+.mobile-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #f3f6fc;
+    border: 1px solid #e1e9f6;
+    border-radius: 0.75rem;
+}
+
+.mobile-menu-button:focus-visible {
+    outline: 3px solid #fb923c;
+    outline-offset: 2px;
+}
+
+/* Shared navigation and footer */
+nav.site-nav {
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e8e8e3;
+    box-shadow: 0 4px 20px rgba(23, 37, 84, 0.04);
+    backdrop-filter: blur(12px);
+}
+
+.site-nav .brand-ap,
+.site-nav .brand-rest {
+    color: #172e60;
+}
+
+.site-nav .nav-links a {
+    border-bottom: 2px solid transparent;
+    color: #526078;
+    font-size: 0.875rem;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a[aria-current="page"] {
+    border-bottom-color: #a75924;
+    color: #172e60;
+}
+
+.site-nav .mobile-menu {
+    background: #fff;
+    border: 1px solid #e8e8e3;
+    border-top: 0;
+    border-radius: 0 0 1rem 1rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.site-nav .mobile-menu a[aria-current="page"] {
+    background: #f7f5ef;
+    color: #172e60;
+}
+
+.site-nav a:focus-visible,
+.site-footer a:focus-visible,
+.gallery-page button:focus-visible,
+.gallery-item:focus-visible {
+    outline: 3px solid #c6874f;
+    outline-offset: 3px;
+}
+
+.site-footer {
+    background: #101c35;
+    color: #cbd5e1;
+    padding: 4.5rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.1fr;
+    gap: 3rem;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.footer-logo span {
+    color: #e8b786;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.footer-brand p {
+    max-width: 19rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.site-footer h2,
+.home-page .site-footer h2,
+.inner-page .site-footer h2 {
+    margin: 0 0 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.site-footer ul {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.site-footer p,
+.site-footer li {
+    font-size: 0.875rem;
+    line-height: 1.8;
+}
+
+.site-footer a:hover {
+    color: #f0c298;
+}
+
+.site-footer .footer-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    color: #f0c298;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: #aebbd0;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+}
+
+.footer-bottom a {
+    color: #e1e9f4;
+}
+
+/* Inner pages */
+section.page-header {
+    background: #f7f5ef;
+    padding: 8.5rem 0 4rem;
+}
+
+.page-header h1,
+.inner-page h2 {
+    color: #172554;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+}
+
+.page-header h1 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.page-header p:not(.room-eyebrow) {
+    max-width: 42rem;
+    color: #526078;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.inner-page h2 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+}
+
+.inner-page h3 {
+    color: #172554;
+}
+
+.inner-page .about-story,
+.inner-page .about-achievements,
+.inner-page .about-rules,
+.inner-page .rooms-comparison,
+.inner-page .rooms-policies,
+.inner-page .contact-details,
+.inner-page .contact-information,
+.inner-page .gallery-photos {
+    background: #fff;
+}
+
+.inner-page .about-team,
+.inner-page .about-values,
+.inner-page .contact-visit {
+    background: #f7f5ef;
+}
+
+.about-story,
+.about-team,
+.about-achievements,
+.about-values,
+.about-rules,
+.rooms-comparison,
+.rooms-policies,
+.contact-details,
+.contact-visit,
+.contact-information {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.about-story .grid > div:first-child {
+    border-radius: 1.25rem 1.25rem 1.25rem 4rem;
+    box-shadow: 0 20px 50px rgba(23, 37, 84, 0.12);
+}
+
+.about-story .grid > div:first-child h3 {
+    color: #fff;
+}
+
+.about-story p {
+    line-height: 1.85;
+}
+
+.staff-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 1.25rem;
+    background: #f7f5ef;
+    color: #a75924;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.about-team .modern-card,
+.about-achievements .modern-card,
+.about-values .grid > div,
+.about-rules .max-w-3xl,
+.rooms-policies .bg-white,
+.contact-details .grid > div,
+.contact-visit .grid > div,
+.contact-information .grid > div,
+.contact-information .mt-12.bg-white {
+    border: 1px solid #e8e8e3;
+    border-radius: 1.125rem;
+    box-shadow: 0 10px 30px rgba(23, 37, 84, 0.06);
+}
+
+.about-values p,
+.about-rules li,
+.rooms-policies li,
+.contact-page p {
+    line-height: 1.75;
+}
+
+.rooms-comparison thead tr {
+    background: #172e60;
+}
+
+.comparison-scroll table {
+    min-width: 850px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.inner-page .rooms-cta {
+    background: #172e60;
+}
+
+.rooms-page .room-section {
+    padding-top: 0;
+    background: #f7f5ef;
+}
+
+.rooms-page .room-carousel > .modern-card > div:last-child > div:first-child {
+    background: #172e60;
+    box-shadow: 0 6px 16px rgba(23, 46, 96, 0.18);
+}
+
+.rooms-cta h2 {
+    color: #fff;
+}
+
+.contact-details a,
+.contact-visit a {
+    overflow-wrap: anywhere;
+}
+
+.contact-visit iframe {
+    display: block;
+    border-radius: 0.75rem;
+}
+
+/* Gallery */
+.gallery-page .gallery-filters {
+    background: #f7f5ef;
+    padding: 0 0 2rem;
+}
+
+.gallery-filters .filter-btn {
+    min-height: 44px;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid #dedfdc;
+    background: #fff;
+    color: #526078;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.gallery-filters .filter-btn.active {
+    border-color: #172e60;
+    background: #172e60;
+    color: #fff;
+    transform: none;
+}
+
+.gallery-page .gallery-photos {
+    padding-top: 3rem;
+}
+
+.gallery-grid {
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.gallery-item .aspect-w-4 {
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-item .p-4 {
+    padding: 1.35rem;
+}
+
+.gallery-item h3 {
+    margin-bottom: 0.3rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background: #172e60;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 1.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    section.page-header {
+        padding: 7rem 0 3rem;
+    }
+
+    .page-header h1 {
+        font-size: clamp(2.4rem, 9vw, 3.25rem);
+    }
+
+    .about-story,
+    .about-team,
+    .about-achievements,
+    .about-values,
+    .about-rules,
+    .rooms-comparison,
+    .rooms-policies,
+    .contact-details,
+    .contact-visit,
+    .contact-information {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .gallery-filters .flex {
+        gap: 0.5rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .mobile-menu a { display: block; }

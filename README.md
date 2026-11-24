@@ -6,9 +6,10 @@ AP Hostel is a web project for presenting hostel information and services throug
 
 - Hostel information and about section
 - Room information
-- Image gallery
+- Scrollable room cards and room-specific WhatsApp visit requests
+- Filterable image gallery with a keyboard-accessible photo preview
 - Contact page
-- Responsive navigation
+- Responsive navigation and shared contact footer
 - SEO-related files such as `robots.txt` and `sitemap.xml`
 
 ## Tech Stack
